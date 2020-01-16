@@ -1,7 +1,7 @@
 # InSpec test for recipe It_app::default
 
 # The InSpec reference, with examples and extensive documentation, can be
-# found at https://www.inspec.io/docs/reference/resources/
+# found at
 
 unless os.windows?
   # This is an example test, replace with your own test.
@@ -13,4 +13,11 @@ end
 # This is an example test, replace it with your own test.
 describe port(80), :skip do
   it { should_not be_listening }
+end
+describe package ('python3-dev') do
+  it {should be_installed}
+  its('version') {should match /3.\ /}
+end
+describe package ('python3-pip')do
+  it {should be_installed}
 end
