@@ -16,7 +16,6 @@ describe port(80), :skip do
 end
 describe package ('python3-dev') do
   it {should be_installed}
-  its('version') {should match /3.\ /}
 end
 describe package ('python3-pip')do
   it {should be_installed}

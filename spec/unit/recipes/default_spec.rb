@@ -24,12 +24,6 @@ describe 'It_app::default' do
     it 'should install python3-pip'do
       expect(chef_run).to install_package 'python3-pip'
     end
-    it 'should tranfer files'do
-      expect(chef_run).to create_cookbook_file "/home/ubuntu/requirements.txt"
-    end
-    it 'should use pip3 to install packages' do
-      expect(chef_run).to run_execute 'pip3 install requirements'
-    end
     it 'should create directory Downloads' do
       expect(chef_run).to create_directory '/home/vagrant/Downloads'
     end
